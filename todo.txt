@@ -1,0 +1,5 @@
+[ ] Add key instances to a key
+[ ] Editing a key instance
+[ ] Deleting a key instance
+[*] Deleting a key which has aliases
+    - Done, defaults to no key instances for all previous aliases
