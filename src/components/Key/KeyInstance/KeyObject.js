@@ -1,14 +1,22 @@
-import React, {useState} from 'react';
-import { Eye, EyeSlash, ClipboardPlus } from 'react-bootstrap-icons';
+import React, { useState } from 'react';
+import { Eye, EyeSlash, ClipboardPlus, ArrowClockwise } from 'react-bootstrap-icons';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import Input from '../../Input';
+import { generatePassword, generatePin } from '../../../code';
 
 
-export default ({ edit, onChange=(()=>{}), value, label, className, isPassword=false }) => {
+export default ({ edit, onChange=(()=>{}), value, label, className, isPassword=false, passType=undefined }) => {
     const [showPass, setShowPass] = useState(false);
+
+    function swapPassword(newvalue) {
+        if (!newvalue) {
+            newvalue = passType != "PIN" ? generatePassword() : generatePin();
+        }
+        console.log(newvalue);
+    }
 
     return (
         <InputGroup className={className}>
@@ -21,7 +29,7 @@ export default ({ edit, onChange=(()=>{}), value, label, className, isPassword=f
             : null}
             <Input
                 onChange={edit ? onChange : ()=>{}}
-                value={!isPassword || showPass ? value : "password"}
+                value={edit || !isPassword || showPass ? value : "password"}
                 type={edit || !isPassword || showPass ? "text" : "password"} />
             {!edit && isPassword ?
                 <InputGroup.Append>
@@ -37,6 +45,13 @@ export default ({ edit, onChange=(()=>{}), value, label, className, isPassword=f
                             <ClipboardPlus />
                         </Button>
                     </CopyToClipboard>
+                </InputGroup.Append>
+            : null}
+            {edit && isPassword ?
+                <InputGroup.Append>
+                    <Button id="regen-icon" variant="warning" onClick={()=>console.log(generatePassword())}>
+                        <ArrowClockwise />
+                    </Button>
                 </InputGroup.Append>
             : null}
         </InputGroup>
