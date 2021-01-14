@@ -4,8 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 
-export default ({ isShown, onCancel, onConfirm, message="Are you sure you want to do that?" }) => {
-    
+function ConfirmModal({ isShown, onCancel, onConfirm, message="Are you sure you want to do that?" }) {
     return (
         <Modal show={isShown} onHide={onCancel}>
             <Modal.Header closeButton>
@@ -25,3 +24,5 @@ export default ({ isShown, onCancel, onConfirm, message="Are you sure you want t
         </Modal>
     );
 };
+
+export default ConfirmModal;

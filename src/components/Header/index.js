@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 
-export default ({ isLoggedIn })=>{
+function Header({ isLoggedIn }) {
     const variant = isLoggedIn ? "success" : "warning";
     return (
         <Navbar sticky="top" bg={variant} variant="dark">
@@ -17,3 +17,5 @@ export default ({ isLoggedIn })=>{
         </Navbar>
     );
 }
+
+export default Header;

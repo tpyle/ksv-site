@@ -11,7 +11,7 @@ import Input from '../Input';
 import { putKeys, getKeys } from '../../api';
 
 
-export default () => {
+function Main() {
     const [enc, setEnc] = useState(null);
     const [dec, setDec] = useState(null);
     const [key, setKey] = useState("");
@@ -89,3 +89,5 @@ export default () => {
         <KeyList keys={dec} encrypt={encrypt} />
     );
 };
+
+export default Main;

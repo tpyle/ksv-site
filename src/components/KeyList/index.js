@@ -30,7 +30,7 @@ function findAliases(name, keyObject) {
 }
 
 
-export default ({ keys, encrypt }) => {
+function KeyList ({ keys, encrypt }) {
     const [cKeys, setCKeys] = useState({
             "http://google.com": [{
                 username: "tpyle",
@@ -151,3 +151,5 @@ export default ({ keys, encrypt }) => {
         </Row>
     );
 }
+
+export default KeyList;

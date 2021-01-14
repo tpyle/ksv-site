@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import Form from 'react-bootstrap/Form';
 
-
-export default ({ onChange, ...props }) => {
+ 
+function Input({ onChange, ...props }) {
     const inputRef = useRef(null);
 
 
@@ -14,3 +14,5 @@ export default ({ onChange, ...props }) => {
         />
     )
 };   
+
+export default Input;

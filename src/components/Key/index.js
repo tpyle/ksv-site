@@ -13,7 +13,7 @@ import KeyForm from '../KeyForm';
 import ConfirmModal from '../ConfirmModal';
 
 
-export default ({ name, aliasValue, values, allKeyNames, onUpdate, onDelete }) => {
+function Key ({ name, aliasValue, values, allKeyNames, onUpdate, onDelete }) {
     const [isEditing, setIsEditing] = useState(false);
     const [isAdding, setIsAdding] = useState(false);
     const [showDeleteConfirmModal, setShowDeleteConfirmModal] = useState(false);
@@ -85,3 +85,5 @@ export default ({ name, aliasValue, values, allKeyNames, onUpdate, onDelete }) =
         </div>
     );
 }
+
+export default Key;

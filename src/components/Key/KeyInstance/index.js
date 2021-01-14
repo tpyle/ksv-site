@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import KeyObject from './KeyObject';
 
 
-export default ({ username, email, password, pin, onUpdate, ...props }) => {
+function KeyInstance ({ username, email, password, pin, onUpdate, ...props }) {
     const hasValue = [username, email, password, pin].filter(k=>k !== undefined).length > 0;
     const [isEditting, setIsEditting] = useState(!hasValue);
 
@@ -33,3 +33,5 @@ export default ({ username, email, password, pin, onUpdate, ...props }) => {
         </>
     )
 };
+
+export default KeyInstance;

@@ -5,7 +5,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Input from "../../Input";
 
 
-export default ({ username="", email="", password="", pin=""}={}) => {
+function KeyInstanceForm ({ username="", email="", password="", pin=""}={}) {
     const [cUsername, setCUsername] = useState(username);
     const [cEmail, setCEmail] = useState(email);
     const [cPassword, setCPassword] = useState(password);
@@ -20,3 +20,5 @@ export default ({ username="", email="", password="", pin=""}={}) => {
         </Form>
     )
 };
+
+export default KeyInstanceForm;

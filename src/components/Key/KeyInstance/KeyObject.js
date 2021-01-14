@@ -8,12 +8,12 @@ import Input from '../../Input';
 import { generatePassword, generatePin } from '../../../code';
 
 
-export default ({ edit, onChange=(()=>{}), value, label, className, isPassword=false, passType=undefined }) => {
+function KeyObject({ edit, onChange=(()=>{}), value, label, className, isPassword=false, passType=undefined }) {
     const [showPass, setShowPass] = useState(false);
 
     function swapPassword(newvalue) {
         if (!newvalue) {
-            newvalue = passType != "PIN" ? generatePassword() : generatePin();
+            newvalue = passType !== "PIN" ? generatePassword() : generatePin();
         }
         console.log(newvalue);
     }
@@ -57,3 +57,5 @@ export default ({ edit, onChange=(()=>{}), value, label, className, isPassword=f
         </InputGroup>
     );
 };
+
+export default KeyObject;

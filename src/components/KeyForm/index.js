@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 import Input from '../Input';
 
 
-export default ({ allKeyNames, currentKey, currentValue, updateKey, onCancel }) => {
+function KeyForm ({ allKeyNames, currentKey, currentValue, updateKey, onCancel }) {
     const [cKeyName, setCKeyName] = useState(currentKey || "");
     const [isAlias, setIsAlias] = useState(typeof(currentValue) === "string");
     const dAliasValue = isAlias ? currentValue : allKeyNames && allKeyNames.length ? allKeyNames[0] : "";
@@ -78,3 +78,5 @@ export default ({ allKeyNames, currentKey, currentValue, updateKey, onCancel }) 
         </Form>
     );
 };
+
+export default KeyForm;
