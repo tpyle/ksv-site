@@ -38,7 +38,7 @@ export const generatePassword = ({ specialLength=4, upperLength=4, numberLength=
 };
 
 
-export const generatePin = (length) => {
+export const generatePin = (length=4) => {
     return Array(length)
                 .fill()
                 .map(_=>getRandomNumber())

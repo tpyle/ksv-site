@@ -25,7 +25,7 @@ function KeyInstance ({ username, email, password, pin, onUpdate, ...props }) {
                 <KeyObject onChange={setCPassword} edit={isEditting} className={isEditting || cUsername || cEmail ? "mt-3" : ""} label="Password" value={cPassword} isPassword={true} />
             : null}
             {isEditting || cPIN ?
-                <KeyObject onChange={setCPIN} edit={isEditting} className={isEditting || cUsername || cEmail || cPassword ? "mt-3" : ""} label="PIN" value={cPIN} isPassword={true} />
+                <KeyObject onChange={setCPIN} edit={isEditting} className={isEditting || cUsername || cEmail || cPassword ? "mt-3" : ""} label="PIN" value={cPIN} isPassword={true} passType="PIN" />
             : null}
             <Button className="mt-3" variant={isEditting ? "success" : "secondary"} onClick={()=>setIsEditting(!isEditting)}>
                 {isEditting ? "Commit Change" : "Edit"}

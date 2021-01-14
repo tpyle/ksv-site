@@ -11,11 +11,9 @@ import { generatePassword, generatePin } from '../../../code';
 function KeyObject({ edit, onChange=(()=>{}), value, label, className, isPassword=false, passType=undefined }) {
     const [showPass, setShowPass] = useState(false);
 
-    function swapPassword(newvalue) {
-        if (!newvalue) {
-            newvalue = passType !== "PIN" ? generatePassword() : generatePin();
-        }
-        console.log(newvalue);
+    function genPassword() {
+        const newValue = passType !== "PIN" ? generatePassword() : generatePin();
+        onChange(newValue);
     }
 
     return (
@@ -49,7 +47,7 @@ function KeyObject({ edit, onChange=(()=>{}), value, label, className, isPasswor
             : null}
             {edit && isPassword ?
                 <InputGroup.Append>
-                    <Button id="regen-icon" variant="warning" onClick={()=>console.log(generatePassword())}>
+                    <Button id="regen-icon" variant="warning" onClick={()=>genPassword()}>
                         <ArrowClockwise />
                     </Button>
                 </InputGroup.Append>
