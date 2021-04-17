@@ -40,10 +40,3 @@ jobs:
 
       - name: Ensure Audit Compliance
         run: npm audit
-        
-      - name: Build
-        run: npm run build
-        
-      - name: Rest
-        run: ls -l
-
