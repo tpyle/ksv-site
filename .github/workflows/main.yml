@@ -39,4 +39,4 @@ jobs:
         run: npm install
 
       - name: Ensure Audit Compliance
-        run: npm audit && echo "S" || echo "F"
+        run: npm audit --audit-level=low && echo "S" || echo "F"
